@@ -13,7 +13,11 @@
 		AC79FCAD25E42CC50083344D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCAB25E42CC50083344D /* Main.storyboard */; };
 		AC79FCAF25E42CC50083344D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCAE25E42CC50083344D /* Assets.xcassets */; };
 		AC79FCB225E42CC50083344D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCB025E42CC50083344D /* LaunchScreen.storyboard */; };
-		AC79FCBD25E42CC50083344D /* Punk_BeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCBC25E42CC50083344D /* Punk_BeerTests.swift */; };
+		AC79FCDF25E42DED0083344D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCDE25E42DED0083344D /* Beer.swift */; };
+		AC79FCE525E42E070083344D /* BeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCE425E42E070083344D /* BeerTests.swift */; };
+		AC79FCF325E43C070083344D /* beer-search-result.json in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCF225E43C070083344D /* beer-search-result.json */; };
+		AC79FCF925E43F730083344D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCF825E43F730083344D /* Ingredient.swift */; };
+		AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +40,12 @@
 		AC79FCB125E42CC50083344D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC79FCB325E42CC50083344D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC79FCB825E42CC50083344D /* Punk BeerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Punk BeerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC79FCBC25E42CC50083344D /* Punk_BeerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Punk_BeerTests.swift; sourceTree = "<group>"; };
 		AC79FCBE25E42CC50083344D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC79FCDE25E42DED0083344D /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		AC79FCE425E42E070083344D /* BeerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTests.swift; sourceTree = "<group>"; };
+		AC79FCF225E43C070083344D /* beer-search-result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beer-search-result.json"; sourceTree = "<group>"; };
+		AC79FCF825E43F730083344D /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 		AC79FCA425E42CC50083344D /* Punk Beer */ = {
 			isa = PBXGroup;
 			children = (
+				AC79FCFC25E4532C0083344D /* Extensions */,
+				AC79FCDD25E42DD90083344D /* Model */,
 				AC79FCA525E42CC50083344D /* AppDelegate.swift */,
 				AC79FCA725E42CC50083344D /* SceneDelegate.swift */,
 				AC79FCA925E42CC50083344D /* ViewController.swift */,
@@ -93,10 +103,36 @@
 		AC79FCBB25E42CC50083344D /* Punk BeerTests */ = {
 			isa = PBXGroup;
 			children = (
-				AC79FCBC25E42CC50083344D /* Punk_BeerTests.swift */,
+				AC79FCEF25E43B510083344D /* Resources */,
+				AC79FCE425E42E070083344D /* BeerTests.swift */,
 				AC79FCBE25E42CC50083344D /* Info.plist */,
 			);
 			path = "Punk BeerTests";
+			sourceTree = "<group>";
+		};
+		AC79FCDD25E42DD90083344D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC79FCDE25E42DED0083344D /* Beer.swift */,
+				AC79FCF825E43F730083344D /* Ingredient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC79FCEF25E43B510083344D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC79FCF225E43C070083344D /* beer-search-result.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC79FCFC25E4532C0083344D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC79FCF325E43C070083344D /* beer-search-result.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +238,10 @@
 			files = (
 				AC79FCAA25E42CC50083344D /* ViewController.swift in Sources */,
 				AC79FCA625E42CC50083344D /* AppDelegate.swift in Sources */,
+				AC79FCF925E43F730083344D /* Ingredient.swift in Sources */,
+				AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */,
 				AC79FCA825E42CC50083344D /* SceneDelegate.swift in Sources */,
+				AC79FCDF25E42DED0083344D /* Beer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC79FCBD25E42CC50083344D /* Punk_BeerTests.swift in Sources */,
+				AC79FCE525E42E070083344D /* BeerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
