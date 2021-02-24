@@ -21,8 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
+        let vc = Assembler.provideSearchView()
+        window?.rootViewController = vc
+        
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .yellow
+        
     }
 
 

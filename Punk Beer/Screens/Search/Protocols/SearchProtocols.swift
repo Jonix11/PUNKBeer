@@ -8,9 +8,9 @@
 import Foundation
 
 protocol SearchPresenterProtocol {
-    
+    func getInitialBeerList()
 }
 
-protocol SearchViewProtocol {
-    
+protocol SearchViewProtocol: AnyObject {
+    func setBeerList(with beers: [Beer])
 }

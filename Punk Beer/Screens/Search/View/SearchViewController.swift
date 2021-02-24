@@ -21,13 +21,22 @@ class SearchViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            let nib = UINib(nibName: SearchViewCell.nibName, bundle: nil)
+            tableView.register(nib, forCellReuseIdentifier: SearchViewCell.reusableId)
+        }
+    }
     
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        presenter.getInitialBeerList()
     }
 }
 
@@ -41,7 +50,22 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let beer = model[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchViewCell.reusableId, for: indexPath) as! SearchViewCell
+        cell.beer = beer
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+}
+
+extension SearchViewController: SearchViewProtocol {
+    func setBeerList(with beers: [Beer]) {
+        model = beers
+        tableView.reloadData()
     }
     
     

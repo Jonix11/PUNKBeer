@@ -18,6 +18,8 @@
 		AC69BE8F25E6D1610081ED3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BE8E25E6D1610081ED3A /* Constants.swift */; };
 		AC69BE9725E6D6350081ED3A /* MockConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BE9625E6D6350081ED3A /* MockConsumer.swift */; };
 		AC69BE9D25E6E0EA0081ED3A /* BeerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BE9C25E6E0EA0081ED3A /* BeerServiceTests.swift */; };
+		AC69BEA325E6E5DC0081ED3A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BEA225E6E5DC0081ED3A /* SearchPresenter.swift */; };
+		AC69BEA925E6E8330081ED3A /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BEA825E6E8330081ED3A /* Assembly.swift */; };
 		AC79FCA625E42CC50083344D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCA525E42CC50083344D /* AppDelegate.swift */; };
 		AC79FCA825E42CC50083344D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCA725E42CC50083344D /* SceneDelegate.swift */; };
 		AC79FCAF25E42CC50083344D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCAE25E42CC50083344D /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		AC69BE8E25E6D1610081ED3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC69BE9625E6D6350081ED3A /* MockConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockConsumer.swift; sourceTree = "<group>"; };
 		AC69BE9C25E6E0EA0081ED3A /* BeerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerServiceTests.swift; sourceTree = "<group>"; };
+		AC69BEA225E6E5DC0081ED3A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		AC69BEA825E6E8330081ED3A /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		AC79FCA225E42CC50083344D /* Punk Beer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Punk Beer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79FCA525E42CC50083344D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79FCA725E42CC50083344D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		AC69BE6625E6B8120081ED3A /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
+				AC69BEA825E6E8330081ED3A /* Assembly.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -174,9 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				AC79FCEF25E43B510083344D /* Resources */,
+				AC69BE9C25E6E0EA0081ED3A /* BeerServiceTests.swift */,
 				AC79FCE425E42E070083344D /* BeerTests.swift */,
 				AC79FCBE25E42CC50083344D /* Info.plist */,
-				AC69BE9C25E6E0EA0081ED3A /* BeerServiceTests.swift */,
 			);
 			path = "Punk BeerTests";
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 		AC79FD0325E5A29C0083344D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				AC69BEA225E6E5DC0081ED3A /* SearchPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -428,11 +434,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC69BE8125E6CDC40081ED3A /* PunkAPIConsumable.swift in Sources */,
+				AC69BEA925E6E8330081ED3A /* Assembly.swift in Sources */,
 				AC69BE8725E6CEC70081ED3A /* BeerService.swift in Sources */,
 				AC69BE7425E6C0870081ED3A /* SearchViewCell.swift in Sources */,
 				AC79FCA625E42CC50083344D /* AppDelegate.swift in Sources */,
 				AC69BE5E25E6B0640081ED3A /* SearchViewController.swift in Sources */,
 				AC69BE5925E6AF8F0081ED3A /* SearchProtocols.swift in Sources */,
+				AC69BEA325E6E5DC0081ED3A /* SearchPresenter.swift in Sources */,
 				AC79FCF925E43F730083344D /* Ingredient.swift in Sources */,
 				AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */,
 				AC69BE8B25E6D1050081ED3A /* PunkAPIConsumer.swift in Sources */,
