@@ -23,9 +23,13 @@ class SearchPresenter {
 extension SearchPresenter: SearchPresenterProtocol {
     func getInitialBeerList() {
         service.getBeer(onSuccess: { [weak self] (beers) in
-            self?.ui?.setBeerList(with: beers)
+            if beers.count == 0 {
+                self?.ui?.setEmptyStatus()
+            } else {
+                self?.ui?.setBeerList(with: beers)
+            }
         }, failure: { [weak self] (error) in
-            #warning("TODO")
+            self?.ui?.setFailureStatus()
         })
     }
     

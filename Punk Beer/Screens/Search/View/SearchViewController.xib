@@ -10,7 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="Punk_Beer" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicator" destination="BVC-qU-QLt" id="85d-cC-2PE"/>
                 <outlet property="searchBar" destination="YSl-0X-beE" id="Cg5-gf-P3C"/>
+                <outlet property="stateImage" destination="DHu-SC-bfO" id="pap-j4-PMc"/>
+                <outlet property="stateLabel" destination="EfD-QF-dvl" id="kaI-Dn-PGb"/>
+                <outlet property="stateView" destination="57f-Gp-Muo" id="3Fr-xu-BCH"/>
                 <outlet property="tableView" destination="Kde-dZ-l5g" id="f8e-Ls-qlY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,24 +32,65 @@
                     <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57f-Gp-Muo" userLabel="State View">
+                    <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BVC-qU-QLt">
+                            <rect key="frame" x="188.5" y="332.5" width="37" height="37"/>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DHu-SC-bfO" userLabel="State Image">
+                            <rect key="frame" x="184.5" y="329" width="45" height="44"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="FeG-pp-chg"/>
+                                <constraint firstAttribute="width" constant="45" id="PYz-Qa-PwO"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfD-QF-dvl" userLabel="State Label">
+                            <rect key="frame" x="10" y="381.5" width="394" height="27"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="EfD-QF-dvl" firstAttribute="top" secondItem="DHu-SC-bfO" secondAttribute="bottom" constant="8" id="0TB-Zu-vth"/>
+                        <constraint firstItem="EfD-QF-dvl" firstAttribute="leading" secondItem="57f-Gp-Muo" secondAttribute="leading" constant="10" id="5jo-Lz-KaZ"/>
+                        <constraint firstItem="DHu-SC-bfO" firstAttribute="centerX" secondItem="57f-Gp-Muo" secondAttribute="centerX" id="O2i-Nt-aK6"/>
+                        <constraint firstItem="BVC-qU-QLt" firstAttribute="centerY" secondItem="57f-Gp-Muo" secondAttribute="centerY" constant="-30" id="aiJ-mx-na9"/>
+                        <constraint firstItem="DHu-SC-bfO" firstAttribute="centerY" secondItem="57f-Gp-Muo" secondAttribute="centerY" constant="-30" id="f2g-LJ-0Vm"/>
+                        <constraint firstAttribute="trailing" secondItem="EfD-QF-dvl" secondAttribute="trailing" constant="10" id="iPj-GR-R0K"/>
+                        <constraint firstItem="BVC-qU-QLt" firstAttribute="centerX" secondItem="57f-Gp-Muo" secondAttribute="centerX" id="wEW-U0-d1E"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Kde-dZ-l5g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5NZ-Ih-AMj"/>
+                <constraint firstItem="57f-Gp-Muo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Km9-sn-y2z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kde-dZ-l5g" secondAttribute="trailing" id="LYL-S6-FUm"/>
+                <constraint firstItem="57f-Gp-Muo" firstAttribute="top" secondItem="YSl-0X-beE" secondAttribute="bottom" id="M90-Pf-7S2"/>
                 <constraint firstItem="YSl-0X-beE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RcA-ip-gJ5"/>
                 <constraint firstItem="YSl-0X-beE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RyK-Ns-xKA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="57f-Gp-Muo" secondAttribute="trailing" id="abg-2X-M61"/>
                 <constraint firstItem="YSl-0X-beE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eaX-2g-uJW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="57f-Gp-Muo" secondAttribute="bottom" id="fVq-lq-REB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kde-dZ-l5g" secondAttribute="bottom" id="nD7-SI-yxq"/>
                 <constraint firstItem="Kde-dZ-l5g" firstAttribute="top" secondItem="YSl-0X-beE" secondAttribute="bottom" id="oeF-av-2Kj"/>
             </constraints>
-            <point key="canvasLocation" x="164" y="81"/>
+            <point key="canvasLocation" x="163.768115942029" y="80.357142857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

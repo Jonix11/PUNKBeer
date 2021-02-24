@@ -13,4 +13,6 @@ protocol SearchPresenterProtocol {
 
 protocol SearchViewProtocol: AnyObject {
     func setBeerList(with beers: [Beer])
+    func setEmptyStatus()
+    func setFailureStatus()
 }

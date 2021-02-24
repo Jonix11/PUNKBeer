@@ -7,10 +7,42 @@
 
 import UIKit
 
+enum ViewState {
+    case loading
+    case failure
+    case empty
+    case success
+}
+
 class SearchViewController: UIViewController {
     
     //MARK: - Properties
     var model: [Beer] = []
+    var state: ViewState = .success {
+        willSet {
+            guard newValue != state else { return }
+            
+            switch newValue {
+            case .loading:
+                [stateView, loadingIndicator].forEach { $0?.isHidden = false }
+                [stateLabel, stateImage].forEach { $0?.isHidden = true }
+            case .failure:
+                [stateView,stateLabel, stateImage].forEach { $0?.isHidden = false }
+                loadingIndicator.isHidden = true
+                stateLabel.text = "There was a problem loading beers list"
+                stateImage.image = UIImage(systemName: "xmark.circle.fill")
+                stateImage.tintColor = UIColor.systemRed
+            case .empty:
+                [stateView,stateLabel, stateImage].forEach { $0?.isHidden = false }
+                loadingIndicator.isHidden = true
+                stateLabel.text = "There aren't beers that fit the search"
+                stateImage.image = UIImage(systemName: "info.circle.fill")
+                stateImage.tintColor = UIColor.systemBlue
+            case .success:
+                stateView.isHidden = true
+            }
+        }
+    }
     
     //MARK: - Presenter Elements
     public private(set) var presenter: SearchPresenterProtocol!
@@ -27,6 +59,10 @@ class SearchViewController: UIViewController {
             tableView.register(nib, forCellReuseIdentifier: SearchViewCell.reusableId)
         }
     }
+    @IBOutlet weak var stateView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var stateImage: UIImageView!
+    @IBOutlet weak var stateLabel: UILabel!
     
     
     //MARK: - Life Cycle
@@ -35,7 +71,7 @@ class SearchViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        state = .loading
         presenter.getInitialBeerList()
     }
 }
@@ -63,10 +99,18 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: SearchViewProtocol {
+    
     func setBeerList(with beers: [Beer]) {
         model = beers
         tableView.reloadData()
+        state = .success
     }
     
+    func setEmptyStatus() {
+        state = .empty
+    }
     
+    func setFailureStatus() {
+        state = .failure
+    }
 }

@@ -6,7 +6,7 @@ target 'Punk Beer' do
   use_frameworks!
 
   # Pods for Punk Beer
-  pod 'SDWebImage', '~> 5.0'
+  pod 'SDWebImage'
 
   target 'Punk BeerTests' do
     inherit! :search_paths
