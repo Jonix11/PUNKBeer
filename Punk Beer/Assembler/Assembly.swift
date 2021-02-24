@@ -10,7 +10,7 @@ import UIKit
 class Assembler {
     static func provideSearchView() -> UIViewController {
         let searchView = SearchViewController()
-        let beerService = BeerService(withApiConsumer: MockConsumer())
+        let beerService = BeerService(withApiConsumer: PunkAPIConsumer())
         let searchPresenter = SearchPresenter(withService: beerService, ui: searchView)
         searchView.configure(with: searchPresenter)
         
