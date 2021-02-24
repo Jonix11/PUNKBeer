@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC69BE5925E6AF8F0081ED3A /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BE5825E6AF8F0081ED3A /* SearchProtocols.swift */; };
+		AC69BE5E25E6B0640081ED3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BE5C25E6B0640081ED3A /* SearchViewController.swift */; };
+		AC69BE5F25E6B0640081ED3A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC69BE5D25E6B0640081ED3A /* SearchViewController.xib */; };
+		AC69BE7425E6C0870081ED3A /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69BE7225E6C0870081ED3A /* SearchViewCell.swift */; };
+		AC69BE7525E6C0870081ED3A /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC69BE7325E6C0870081ED3A /* SearchViewCell.xib */; };
 		AC79FCA625E42CC50083344D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCA525E42CC50083344D /* AppDelegate.swift */; };
 		AC79FCA825E42CC50083344D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCA725E42CC50083344D /* SceneDelegate.swift */; };
-		AC79FCAA25E42CC50083344D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCA925E42CC50083344D /* ViewController.swift */; };
-		AC79FCAD25E42CC50083344D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCAB25E42CC50083344D /* Main.storyboard */; };
 		AC79FCAF25E42CC50083344D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCAE25E42CC50083344D /* Assets.xcassets */; };
 		AC79FCB225E42CC50083344D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCB025E42CC50083344D /* LaunchScreen.storyboard */; };
 		AC79FCDF25E42DED0083344D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCDE25E42DED0083344D /* Beer.swift */; };
@@ -18,6 +21,8 @@
 		AC79FCF325E43C070083344D /* beer-search-result.json in Resources */ = {isa = PBXBuildFile; fileRef = AC79FCF225E43C070083344D /* beer-search-result.json */; };
 		AC79FCF925E43F730083344D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCF825E43F730083344D /* Ingredient.swift */; };
 		AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */; };
+		B64B82802AB8C83128526C4F /* Pods_Punk_Beer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF62E675C16D2F594291B125 /* Pods_Punk_Beer.framework */; };
+		CFF1B356B7D4271C059D90E1 /* Pods_Punk_BeerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19E3A46702D7BD403A1D69C /* Pods_Punk_BeerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DFEAEA89991808C1A322DAC /* Pods-Punk Beer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk Beer.release.xcconfig"; path = "Target Support Files/Pods-Punk Beer/Pods-Punk Beer.release.xcconfig"; sourceTree = "<group>"; };
+		6FDB118953400579A961FDDF /* Pods-Punk BeerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk BeerTests.release.xcconfig"; path = "Target Support Files/Pods-Punk BeerTests/Pods-Punk BeerTests.release.xcconfig"; sourceTree = "<group>"; };
+		726D68008DEBF10806C16A4E /* Pods-Punk BeerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk BeerTests.debug.xcconfig"; path = "Target Support Files/Pods-Punk BeerTests/Pods-Punk BeerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A19E3A46702D7BD403A1D69C /* Pods_Punk_BeerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Punk_BeerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC69BE5825E6AF8F0081ED3A /* SearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
+		AC69BE5C25E6B0640081ED3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AC69BE5D25E6B0640081ED3A /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		AC69BE7225E6C0870081ED3A /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		AC69BE7325E6C0870081ED3A /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		AC79FCA225E42CC50083344D /* Punk Beer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Punk Beer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79FCA525E42CC50083344D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79FCA725E42CC50083344D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC79FCA925E42CC50083344D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC79FCAC25E42CC50083344D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC79FCAE25E42CC50083344D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC79FCB125E42CC50083344D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC79FCB325E42CC50083344D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +58,8 @@
 		AC79FCF225E43C070083344D /* beer-search-result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beer-search-result.json"; sourceTree = "<group>"; };
 		AC79FCF825E43F730083344D /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
+		D27C02B63A89EB32542B9688 /* Pods-Punk Beer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk Beer.debug.xcconfig"; path = "Target Support Files/Pods-Punk Beer/Pods-Punk Beer.debug.xcconfig"; sourceTree = "<group>"; };
+		DF62E675C16D2F594291B125 /* Pods_Punk_Beer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Punk_Beer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64B82802AB8C83128526C4F /* Pods_Punk_Beer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,18 +75,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF1B356B7D4271C059D90E1 /* Pods_Punk_BeerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		037A64D11DD98E61053F6823 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D27C02B63A89EB32542B9688 /* Pods-Punk Beer.debug.xcconfig */,
+				2DFEAEA89991808C1A322DAC /* Pods-Punk Beer.release.xcconfig */,
+				726D68008DEBF10806C16A4E /* Pods-Punk BeerTests.debug.xcconfig */,
+				6FDB118953400579A961FDDF /* Pods-Punk BeerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC69BE6625E6B8120081ED3A /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		AC69BE6725E6B90F0081ED3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC69BE7225E6C0870081ED3A /* SearchViewCell.swift */,
+				AC69BE7325E6C0870081ED3A /* SearchViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		AC79FC9925E42CC50083344D = {
 			isa = PBXGroup;
 			children = (
 				AC79FCA425E42CC50083344D /* Punk Beer */,
 				AC79FCBB25E42CC50083344D /* Punk BeerTests */,
 				AC79FCA325E42CC50083344D /* Products */,
+				037A64D11DD98E61053F6823 /* Pods */,
+				B18C3578E83D7840A0B7E1F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,12 +133,12 @@
 		AC79FCA425E42CC50083344D /* Punk Beer */ = {
 			isa = PBXGroup;
 			children = (
+				AC69BE6625E6B8120081ED3A /* Assembler */,
 				AC79FCFC25E4532C0083344D /* Extensions */,
 				AC79FCDD25E42DD90083344D /* Model */,
+				AC79FD0125E58DEA0083344D /* Screens */,
 				AC79FCA525E42CC50083344D /* AppDelegate.swift */,
 				AC79FCA725E42CC50083344D /* SceneDelegate.swift */,
-				AC79FCA925E42CC50083344D /* ViewController.swift */,
-				AC79FCAB25E42CC50083344D /* Main.storyboard */,
 				AC79FCAE25E42CC50083344D /* Assets.xcassets */,
 				AC79FCB025E42CC50083344D /* LaunchScreen.storyboard */,
 				AC79FCB325E42CC50083344D /* Info.plist */,
@@ -135,6 +181,58 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AC79FD0125E58DEA0083344D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AC79FD0225E58E060083344D /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AC79FD0225E58E060083344D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AC79FD0325E5A29C0083344D /* Presenter */,
+				AC79FD0525E5A2BB0083344D /* Protocols */,
+				AC79FD0425E5A2B40083344D /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		AC79FD0325E5A29C0083344D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AC79FD0425E5A2B40083344D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC69BE6725E6B90F0081ED3A /* Cells */,
+				AC69BE5C25E6B0640081ED3A /* SearchViewController.swift */,
+				AC69BE5D25E6B0640081ED3A /* SearchViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC79FD0525E5A2BB0083344D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC69BE5825E6AF8F0081ED3A /* SearchProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B18C3578E83D7840A0B7E1F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF62E675C16D2F594291B125 /* Pods_Punk_Beer.framework */,
+				A19E3A46702D7BD403A1D69C /* Pods_Punk_BeerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC79FCCC25E42CC60083344D /* Build configuration list for PBXNativeTarget "Punk Beer" */;
 			buildPhases = (
+				92351342402B71E70564F7B5 /* [CP] Check Pods Manifest.lock */,
 				AC79FC9E25E42CC50083344D /* Sources */,
 				AC79FC9F25E42CC50083344D /* Frameworks */,
 				AC79FCA025E42CC50083344D /* Resources */,
+				80F1320092970AE5CAEFEAA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +259,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC79FCCF25E42CC60083344D /* Build configuration list for PBXNativeTarget "Punk BeerTests" */;
 			buildPhases = (
+				102B04E293FE34F7D61978A4 /* [CP] Check Pods Manifest.lock */,
 				AC79FCB425E42CC50083344D /* Sources */,
 				AC79FCB525E42CC50083344D /* Frameworks */,
 				AC79FCB625E42CC50083344D /* Resources */,
@@ -215,9 +316,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC69BE7525E6C0870081ED3A /* SearchViewCell.xib in Resources */,
 				AC79FCB225E42CC50083344D /* LaunchScreen.storyboard in Resources */,
 				AC79FCAF25E42CC50083344D /* Assets.xcassets in Resources */,
-				AC79FCAD25E42CC50083344D /* Main.storyboard in Resources */,
+				AC69BE5F25E6B0640081ED3A /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,13 +333,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		102B04E293FE34F7D61978A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Punk BeerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80F1320092970AE5CAEFEAA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Punk Beer/Pods-Punk Beer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Punk Beer/Pods-Punk Beer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Punk Beer/Pods-Punk Beer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92351342402B71E70564F7B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Punk Beer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AC79FC9E25E42CC50083344D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC79FCAA25E42CC50083344D /* ViewController.swift in Sources */,
+				AC69BE7425E6C0870081ED3A /* SearchViewCell.swift in Sources */,
 				AC79FCA625E42CC50083344D /* AppDelegate.swift in Sources */,
+				AC69BE5E25E6B0640081ED3A /* SearchViewController.swift in Sources */,
+				AC69BE5925E6AF8F0081ED3A /* SearchProtocols.swift in Sources */,
 				AC79FCF925E43F730083344D /* Ingredient.swift in Sources */,
 				AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */,
 				AC79FCA825E42CC50083344D /* SceneDelegate.swift in Sources */,
@@ -264,14 +432,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AC79FCAB25E42CC50083344D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC79FCAC25E42CC50083344D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AC79FCB025E42CC50083344D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -401,6 +561,7 @@
 		};
 		AC79FCCD25E42CC60083344D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D27C02B63A89EB32542B9688 /* Pods-Punk Beer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,6 +581,7 @@
 		};
 		AC79FCCE25E42CC60083344D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DFEAEA89991808C1A322DAC /* Pods-Punk Beer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -439,6 +601,7 @@
 		};
 		AC79FCD025E42CC60083344D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 726D68008DEBF10806C16A4E /* Pods-Punk BeerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -461,6 +624,7 @@
 		};
 		AC79FCD125E42CC60083344D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FDB118953400579A961FDDF /* Pods-Punk BeerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

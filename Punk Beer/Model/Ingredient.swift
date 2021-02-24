@@ -51,7 +51,7 @@ extension Ingredient: Decodable {
         case name
         case amount
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)

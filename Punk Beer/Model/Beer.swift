@@ -9,7 +9,7 @@ import Foundation
 
 struct Beer {
     let beerId: Int
-    let name: String?
+    let name: String
     let tagline: String?
     let firstBrewed: Date?
     let description: String?
@@ -18,7 +18,7 @@ struct Beer {
     let foodPairing: [String]?
     let ingredients: Ingredients?
     
-    init(beerId: Int, name: String? = nil, tagline: String? = nil, firstBrewed: Date? = nil, description: String? = nil, imageURL: URL? = nil, abv: Double? = nil, foodPairing: [String]? = nil, ingredients: Ingredients? = nil) {
+    init(beerId: Int, name: String, tagline: String? = nil, firstBrewed: Date? = nil, description: String? = nil, imageURL: URL? = nil, abv: Double? = nil, foodPairing: [String]? = nil, ingredients: Ingredients? = nil) {
         self.beerId = beerId
         self.name = name
         self.tagline = tagline
@@ -50,7 +50,7 @@ extension Beer: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         beerId = try container.decode(Int.self, forKey: .beerId)
-        name = try container.decodeIfPresent(String.self, forKey: .name)
+        name = try container.decode(String.self, forKey: .name)
         tagline = try container.decodeIfPresent(String.self, forKey: .tagline)
         
         if let firstBrewedString = try container.decodeIfPresent(String.self, forKey: .firstBrewed) {
