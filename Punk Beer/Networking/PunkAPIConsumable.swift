@@ -9,4 +9,5 @@ import Foundation
 
 protocol PunkAPIConsumable {
     func getBeers(onSuccess success: @escaping ([Beer]) -> Void, failure: @escaping (Error) -> Void)
+    func getSearchedBeers(byFood food: String, success: @escaping ([Beer]) -> Void, failure: @escaping (Error) -> Void)
 }

@@ -26,4 +26,14 @@ class BeerService {
             failure(error)
         })
     }
+    
+    func getSearchedBeers(byFood food: String, success: @escaping ([Beer]) -> Void, failure: @escaping (Error) -> Void) {
+        apiConsumer.getSearchedBeers(byFood: food, success: { (beers) in
+            assert(Thread.current == Thread.main)
+            success(beers)
+        }, failure: { (error) in
+            assert(Thread.current == Thread.main)
+            failure(error)
+        })
+    }
 }

@@ -21,6 +21,7 @@ class SearchPresenter {
 }
 
 extension SearchPresenter: SearchPresenterProtocol {
+    
     func getInitialBeerList() {
         service.getBeer(onSuccess: { [weak self] (beers) in
             if beers.count == 0 {
@@ -33,5 +34,16 @@ extension SearchPresenter: SearchPresenterProtocol {
         })
     }
     
+    func getSearchedBeerList(withPairingFood food: String) {
+        service.getSearchedBeers(byFood: food, success: { [weak self] (beers) in
+            if beers.count == 0 {
+                self?.ui?.setEmptyStatus()
+            } else {
+                self?.ui?.setBeerList(with: beers)
+            }
+        }, failure: { [weak self] (error) in
+            self?.ui?.setFailureStatus()
+        })
+    }
     
 }

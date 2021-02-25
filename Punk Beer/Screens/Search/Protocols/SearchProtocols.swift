@@ -9,6 +9,7 @@ import Foundation
 
 protocol SearchPresenterProtocol {
     func getInitialBeerList()
+    func getSearchedBeerList(withPairingFood food: String)
 }
 
 protocol SearchViewProtocol: AnyObject {

@@ -32,5 +32,27 @@ class PunkAPIConsumer: PunkAPIConsumable {
         }
         task.resume()
     }
+    
+    func getSearchedBeers(byFood food: String, success: @escaping ([Beer]) -> Void, failure: @escaping (Error) -> Void) {
+        
+        let url = PunkAPIConstants.getBeersURL(withPairingFood: food)
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                DispatchQueue.main.async { failure(error) }
+                return
+            }
+            
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let beerCollection = try decoder.decode([Beer].self, from: data)
+                    DispatchQueue.main.async { success(beerCollection) }
+                } catch {
+                    DispatchQueue.main.async { failure(error) }
+                }
+            }
+        }
+        task.resume()
+    }
 
 }

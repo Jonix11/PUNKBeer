@@ -71,8 +71,20 @@ class SearchViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
         state = .loading
         presenter.getInitialBeerList()
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        state = .loading
+        if searchText.count == 0 {
+            presenter.getInitialBeerList()
+        } else {
+            presenter.getSearchedBeerList(withPairingFood: searchText)
+        }
     }
 }
 
