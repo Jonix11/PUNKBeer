@@ -14,6 +14,6 @@ class Assembler {
         let searchPresenter = SearchPresenter(withService: beerService, ui: searchView)
         searchView.configure(with: searchPresenter)
         
-        return searchView
+        return searchView.wrappedInNavigation()
     }
 }

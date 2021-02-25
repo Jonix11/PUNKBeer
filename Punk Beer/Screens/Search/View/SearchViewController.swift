@@ -69,6 +69,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Beers"
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
@@ -89,7 +90,11 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let beer = model[indexPath.row]
+        let detailView = DetailViewController(beer: beer)
+        present(detailView, animated: true, completion: nil)
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
