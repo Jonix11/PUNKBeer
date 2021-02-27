@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewControllerOLD" customModule="Punk_Beer" customModuleProvider="target">
+            <connections>
+                <outlet property="abvFilterPicker" destination="wLn-NI-UpB" id="spJ-Rw-CfW"/>
+                <outlet property="textField" destination="Zq6-G0-6B1" id="TwK-cv-h1Q"/>
+                <outlet property="textField2" destination="zF5-yf-I0x" id="Lkc-e0-Ikd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-NI-UpB">
+                    <rect key="frame" x="20" y="138" width="374" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="CHv-jr-K2h"/>
+                    </constraints>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol by volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLX-Pr-m3L">
+                    <rect key="frame" x="20" y="94" width="170" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewed after:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-mR-1bf">
+                    <rect key="frame" x="20" y="318" width="121" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewed before:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brf-Ww-Ed0">
+                    <rect key="frame" x="20" y="392" width="137" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-1d-eKl">
+                    <rect key="frame" x="296" y="54" width="98" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Remove filters"/>
+                    <connections>
+                        <action selector="removeFilterButtonTapped:" destination="-1" eventType="touchUpInside" id="Euk-f9-GR2"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zq6-G0-6B1">
+                    <rect key="frame" x="20" y="459" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-yf-I0x">
+                    <rect key="frame" x="20" y="558" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="i3R-1d-eKl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="0Db-3f-iHd"/>
+                <constraint firstItem="y0h-mR-1bf" firstAttribute="top" secondItem="wLn-NI-UpB" secondAttribute="bottom" constant="30" id="2XF-Tg-seY"/>
+                <constraint firstItem="wLn-NI-UpB" firstAttribute="top" secondItem="aLX-Pr-m3L" secondAttribute="bottom" constant="20" id="7tx-Tx-YNl"/>
+                <constraint firstItem="y0h-mR-1bf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7wf-zU-6gN"/>
+                <constraint firstItem="zF5-yf-I0x" firstAttribute="top" secondItem="Zq6-G0-6B1" secondAttribute="bottom" constant="65" id="HvY-ec-568"/>
+                <constraint firstItem="brf-Ww-Ed0" firstAttribute="top" secondItem="y0h-mR-1bf" secondAttribute="bottom" constant="50" id="N3w-An-RWE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zq6-G0-6B1" secondAttribute="trailing" constant="20" id="N8z-b3-ASa"/>
+                <constraint firstItem="zF5-yf-I0x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SPS-Uc-rfC"/>
+                <constraint firstItem="wLn-NI-UpB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UYl-8N-5GW"/>
+                <constraint firstItem="Zq6-G0-6B1" firstAttribute="top" secondItem="brf-Ww-Ed0" secondAttribute="bottom" constant="43" id="bP6-jA-38X"/>
+                <constraint firstItem="aLX-Pr-m3L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="biq-2O-zOi"/>
+                <constraint firstItem="Zq6-G0-6B1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ckU-4N-oh0"/>
+                <constraint firstItem="brf-Ww-Ed0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eY8-h8-B22"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wLn-NI-UpB" secondAttribute="trailing" constant="20" id="j9Q-3r-TLe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zF5-yf-I0x" secondAttribute="trailing" constant="20" id="mS1-mS-0IE"/>
+                <constraint firstItem="aLX-Pr-m3L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="sWA-LI-zXw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i3R-1d-eKl" secondAttribute="trailing" constant="20" id="sdI-FN-t2C"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

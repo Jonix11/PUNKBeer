@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="Punk_Beer" customModuleProvider="target">
+            <connections>
+                <outlet property="abvGreaterTextField" destination="GMe-tm-wfO" id="DWj-HU-Ga8"/>
+                <outlet property="abvLessTextField" destination="ctl-2R-eAx" id="YWS-YJ-RJ0"/>
+                <outlet property="brewedAfterTextField" destination="tkj-D5-AAX" id="i4Y-j4-t7R"/>
+                <outlet property="brewedBeforeTextField" destination="Gbi-rE-Crp" id="EYu-Tx-yk4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iN-dE-Kcs">
+                    <rect key="frame" x="296" y="64" width="98" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Remove filters"/>
+                    <connections>
+                        <action selector="removeFiltersButtonTapped:" destination="-1" eventType="touchUpInside" id="JbZ-nU-Z76"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol by volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-Wi-kLX">
+                    <rect key="frame" x="20" y="114" width="170" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctl-2R-eAx">
+                    <rect key="frame" x="215" y="168" width="179" height="34"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GMe-tm-wfO">
+                    <rect key="frame" x="20" y="168" width="179" height="34"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewed date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4O-k8-WfX">
+                    <rect key="frame" x="20" y="242" width="119" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-rE-Crp">
+                    <rect key="frame" x="215" y="296" width="179" height="34"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkj-D5-AAX">
+                    <rect key="frame" x="20" y="296" width="179" height="34"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="tkj-D5-AAX" firstAttribute="width" secondItem="Gbi-rE-Crp" secondAttribute="width" id="0sF-zq-Il2"/>
+                <constraint firstItem="ctl-2R-eAx" firstAttribute="leading" secondItem="GMe-tm-wfO" secondAttribute="trailing" constant="16" id="5Jy-Ve-prw"/>
+                <constraint firstItem="GMe-tm-wfO" firstAttribute="top" secondItem="qPu-Wi-kLX" secondAttribute="bottom" constant="30" id="6h9-Nc-WVf"/>
+                <constraint firstItem="ctl-2R-eAx" firstAttribute="top" secondItem="qPu-Wi-kLX" secondAttribute="bottom" constant="30" id="7zM-eL-6wt"/>
+                <constraint firstItem="y4O-k8-WfX" firstAttribute="top" secondItem="GMe-tm-wfO" secondAttribute="bottom" constant="40" id="DjB-yf-gxb"/>
+                <constraint firstItem="tkj-D5-AAX" firstAttribute="top" secondItem="y4O-k8-WfX" secondAttribute="bottom" constant="30" id="FfB-cK-xr0"/>
+                <constraint firstItem="qPu-Wi-kLX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="K5x-7d-rxJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2iN-dE-Kcs" secondAttribute="trailing" constant="20" id="KHi-fn-brJ"/>
+                <constraint firstItem="GMe-tm-wfO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="P7z-ou-vHI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gbi-rE-Crp" secondAttribute="trailing" constant="20" id="Rq0-S7-xfG"/>
+                <constraint firstItem="GMe-tm-wfO" firstAttribute="width" secondItem="ctl-2R-eAx" secondAttribute="width" id="Wzi-mI-8ql"/>
+                <constraint firstItem="y4O-k8-WfX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dRo-kb-rbv"/>
+                <constraint firstItem="tkj-D5-AAX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fM7-eQ-Tp2"/>
+                <constraint firstItem="Gbi-rE-Crp" firstAttribute="top" secondItem="y4O-k8-WfX" secondAttribute="bottom" constant="30" id="jcp-98-a5t"/>
+                <constraint firstItem="2iN-dE-Kcs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="n5Y-fJ-RaP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ctl-2R-eAx" secondAttribute="trailing" constant="20" id="r2m-Rm-eFw"/>
+                <constraint firstItem="Gbi-rE-Crp" firstAttribute="leading" secondItem="tkj-D5-AAX" secondAttribute="trailing" constant="16" id="t1k-LK-rMb"/>
+                <constraint firstItem="Gbi-rE-Crp" firstAttribute="leading" secondItem="tkj-D5-AAX" secondAttribute="trailing" constant="16" id="vBF-I5-69G"/>
+                <constraint firstItem="qPu-Wi-kLX" firstAttribute="top" secondItem="2iN-dE-Kcs" secondAttribute="bottom" constant="20" id="vhn-pU-R63"/>
+            </constraints>
+            <point key="canvasLocation" x="-152.17391304347828" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

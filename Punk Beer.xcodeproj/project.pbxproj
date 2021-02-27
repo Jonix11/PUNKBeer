@@ -34,6 +34,10 @@
 		AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */; };
 		AC8DAB6825EA5B8A00B05BBE /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8DAB6625EA5B8A00B05BBE /* IngredientsViewController.swift */; };
 		AC8DAB6925EA5B8A00B05BBE /* IngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8DAB6725EA5B8A00B05BBE /* IngredientsViewController.xib */; };
+		AC8DAB7425EA70A500B05BBE /* FilterViewControllerOLD.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8DAB7025EA70A500B05BBE /* FilterViewControllerOLD.xib */; };
+		AC8DAB7525EA70A500B05BBE /* FilterViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8DAB7125EA70A500B05BBE /* FilterViewControllerOLD.swift */; };
+		AC8DAB7625EA70A500B05BBE /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8DAB7225EA70A500B05BBE /* FilterViewController.xib */; };
+		AC8DAB7725EA70A500B05BBE /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8DAB7325EA70A500B05BBE /* FilterViewController.swift */; };
 		B64B82802AB8C83128526C4F /* Pods_Punk_Beer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF62E675C16D2F594291B125 /* Pods_Punk_Beer.framework */; };
 		CFF1B356B7D4271C059D90E1 /* Pods_Punk_BeerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19E3A46702D7BD403A1D69C /* Pods_Punk_BeerTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +88,10 @@
 		AC79FCFD25E4536C0083344D /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
 		AC8DAB6625EA5B8A00B05BBE /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
 		AC8DAB6725EA5B8A00B05BBE /* IngredientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsViewController.xib; sourceTree = "<group>"; };
+		AC8DAB7025EA70A500B05BBE /* FilterViewControllerOLD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewControllerOLD.xib; sourceTree = "<group>"; };
+		AC8DAB7125EA70A500B05BBE /* FilterViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewControllerOLD.swift; sourceTree = "<group>"; };
+		AC8DAB7225EA70A500B05BBE /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		AC8DAB7325EA70A500B05BBE /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		D27C02B63A89EB32542B9688 /* Pods-Punk Beer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk Beer.debug.xcconfig"; path = "Target Support Files/Pods-Punk Beer/Pods-Punk Beer.debug.xcconfig"; sourceTree = "<group>"; };
 		DF62E675C16D2F594291B125 /* Pods_Punk_Beer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Punk_Beer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -244,6 +252,7 @@
 		AC79FD0125E58DEA0083344D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC8DAB6E25EA70A500B05BBE /* Filters */,
 				AC69BEB525E837D60081ED3A /* Detail */,
 				AC79FD0225E58E060083344D /* Search */,
 			);
@@ -284,6 +293,25 @@
 				AC69BE5825E6AF8F0081ED3A /* SearchProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AC8DAB6E25EA70A500B05BBE /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				AC8DAB6F25EA70A500B05BBE /* View */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		AC8DAB6F25EA70A500B05BBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC8DAB7025EA70A500B05BBE /* FilterViewControllerOLD.xib */,
+				AC8DAB7125EA70A500B05BBE /* FilterViewControllerOLD.swift */,
+				AC8DAB7225EA70A500B05BBE /* FilterViewController.xib */,
+				AC8DAB7325EA70A500B05BBE /* FilterViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B18C3578E83D7840A0B7E1F9 /* Frameworks */ = {
@@ -382,7 +410,9 @@
 				AC79FCB225E42CC50083344D /* LaunchScreen.storyboard in Resources */,
 				AC69BEC625E852060081ED3A /* DetailViewController.xib in Resources */,
 				AC8DAB6925EA5B8A00B05BBE /* IngredientsViewController.xib in Resources */,
+				AC8DAB7425EA70A500B05BBE /* FilterViewControllerOLD.xib in Resources */,
 				AC79FCAF25E42CC50083344D /* Assets.xcassets in Resources */,
+				AC8DAB7625EA70A500B05BBE /* FilterViewController.xib in Resources */,
 				AC69BE5F25E6B0640081ED3A /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +508,9 @@
 				AC79FCF925E43F730083344D /* Ingredient.swift in Sources */,
 				AC79FCFE25E4536C0083344D /* DateFormatter+Custom.swift in Sources */,
 				AC69BE8B25E6D1050081ED3A /* PunkAPIConsumer.swift in Sources */,
+				AC8DAB7525EA70A500B05BBE /* FilterViewControllerOLD.swift in Sources */,
 				AC69BE9725E6D6350081ED3A /* MockConsumer.swift in Sources */,
+				AC8DAB7725EA70A500B05BBE /* FilterViewController.swift in Sources */,
 				AC69BEB225E827F70081ED3A /* UIViewController+Navigation.swift in Sources */,
 				AC79FCA825E42CC50083344D /* SceneDelegate.swift in Sources */,
 				AC8DAB6825EA5B8A00B05BBE /* IngredientsViewController.swift in Sources */,

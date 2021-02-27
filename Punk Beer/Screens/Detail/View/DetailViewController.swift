@@ -86,7 +86,7 @@ class DetailViewController: UIViewController {
     }
 
     @objc func displayIngredients() {
-        let ingredientsView = IngredientsViewController(ingredients: beer.ingredients)
+        let ingredientsView = IngredientsViewController(viewTitle: beer.name, ingredients: beer.ingredients)
         navigationController?.pushViewController(ingredientsView, animated: true)
     }
 }

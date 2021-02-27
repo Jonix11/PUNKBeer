@@ -13,10 +13,12 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var ingredientsTableView: UITableView!
     
     //MARK: - Properties
+    let viewTitle: String
     let ingredients: Ingredients
     
     //MARK: - Initialization
-    init(ingredients: Ingredients) {
+    init(viewTitle: String, ingredients: Ingredients) {
+        self.viewTitle = viewTitle
         self.ingredients = ingredients
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,7 +30,7 @@ class IngredientsViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = viewTitle
         ingredientsTableView.dataSource = self
     }
 }
