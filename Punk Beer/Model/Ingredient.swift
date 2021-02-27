@@ -15,9 +15,9 @@ struct Amount {
 }
 
 struct Ingredients {
-    let malt: [Ingredient]?
-    let hops: [Ingredient]?
-    let yeast: Yeast?
+    let malt: [Ingredient]
+    let hops: [Ingredient]
+    let yeast: Yeast
 }
 
 struct Ingredient {
@@ -40,9 +40,9 @@ extension Ingredients: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        malt = try container.decodeIfPresent([Ingredient].self, forKey: .malt)
-        hops = try container.decodeIfPresent([Ingredient].self, forKey: .hops)
-        yeast = try container.decodeIfPresent(Yeast.self, forKey: .yeast)
+        malt = try container.decode([Ingredient].self, forKey: .malt)
+        hops = try container.decode([Ingredient].self, forKey: .hops)
+        yeast = try container.decode(Yeast.self, forKey: .yeast)
     }
 }
 
@@ -61,4 +61,10 @@ extension Ingredient: Decodable {
 
 extension Amount: Decodable {
     
+}
+
+extension Amount: CustomStringConvertible {
+    var description: String {
+        return "\(value) \(unit)"
+    }
 }

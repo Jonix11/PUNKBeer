@@ -75,13 +75,17 @@ class BeerTests: XCTestCase {
             XCTAssertNotNil(firstBeer?.description)
             XCTAssertNotNil(firstBeer?.imageURL)
             XCTAssertNotNil(firstBeer?.abv)
-            XCTAssertNotNil(firstBeer?.ingredients?.malt)
-            XCTAssertNotNil(firstBeer?.ingredients?.hops)
-            XCTAssertNotNil(firstBeer?.ingredients?.yeast)
+            XCTAssertNotNil(firstBeer?.ingredients.malt)
+            XCTAssertNotNil(firstBeer?.ingredients.hops)
+            XCTAssertNotNil(firstBeer?.ingredients.yeast)
             
         } catch {
             XCTFail()
         }
+    }
+    
+    func testAmountHasDescription() {
+        XCTAssertNotNil(amount.description)
     }
 
 }

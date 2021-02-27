@@ -40,6 +40,7 @@ class DetailViewController: UIViewController {
         foodTableView.dataSource = self
         foodTableView.delegate = self
         
+        setupUI()
         syncModelWithView()
     }
     
@@ -77,6 +78,16 @@ class DetailViewController: UIViewController {
         } else {
             tableViewHeightConstraint.constant = 0
         }
+    }
+    
+    func setupUI() {
+        let ingredientsButton = UIBarButtonItem(title: "Ingredients", style: .plain, target: self, action: #selector(displayIngredients))
+        navigationItem.rightBarButtonItem = ingredientsButton
+    }
+
+    @objc func displayIngredients() {
+        let ingredientsView = IngredientsViewController(ingredients: beer.ingredients)
+        navigationController?.pushViewController(ingredientsView, animated: true)
     }
 }
 

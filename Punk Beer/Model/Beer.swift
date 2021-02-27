@@ -16,9 +16,9 @@ struct Beer {
     let imageURL: URL?
     let abv: Double?
     let foodPairing: [String]?
-    let ingredients: Ingredients?
+    let ingredients: Ingredients
     
-    init(beerId: Int, name: String, tagline: String? = nil, firstBrewed: Date? = nil, description: String? = nil, imageURL: URL? = nil, abv: Double? = nil, foodPairing: [String]? = nil, ingredients: Ingredients? = nil) {
+    init(beerId: Int, name: String, tagline: String? = nil, firstBrewed: Date? = nil, description: String? = nil, imageURL: URL? = nil, abv: Double? = nil, foodPairing: [String]? = nil, ingredients: Ingredients) {
         self.beerId = beerId
         self.name = name
         self.tagline = tagline
@@ -63,7 +63,7 @@ extension Beer: Decodable {
         imageURL = try container.decodeIfPresent(URL.self, forKey: .imageURL)
         abv = try container.decodeIfPresent(Double.self, forKey: .abv)
         foodPairing = try container.decodeIfPresent([String].self, forKey: .foodPairing)
-        ingredients = try container.decodeIfPresent(Ingredients.self, forKey: .ingredients)
+        ingredients = try container.decode(Ingredients.self, forKey: .ingredients)
         
     }
 }

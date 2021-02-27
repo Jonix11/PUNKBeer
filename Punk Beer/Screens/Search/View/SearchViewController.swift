@@ -93,7 +93,7 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let beer = model[indexPath.row]
         let detailView = DetailViewController(beer: beer)
-        present(detailView, animated: true, completion: nil)
+        navigationController?.pushViewController(detailView, animated: true)
     }
 }
 
