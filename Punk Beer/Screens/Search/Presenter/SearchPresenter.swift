@@ -32,20 +32,7 @@ extension SearchPresenter: SearchPresenterProtocol {
         }, failure: { [weak self] (error) in
             self?.ui?.setFailureStatus()
         })
-    }
-    
-    func getSearchedBeerList(withPairingFood food: String) {
-        service.getSearchedBeers(byFood: food, success: { [weak self] (beers) in
-            if beers.count == 0 {
-                self?.ui?.setEmptyStatus()
-            } else {
-                self?.ui?.setBeerList(with: beers)
-            }
-        }, failure: { [weak self] (error) in
-            self?.ui?.setFailureStatus()
-        })
-    }
-    
+    }    
     
     func getSearchedBeerList(withQueryParams queryParams: [String: String]) {
         service.getSearchedBeers(withQueryParams: queryParams, success: { [weak self] (beers) in
@@ -58,5 +45,7 @@ extension SearchPresenter: SearchPresenterProtocol {
             self?.ui?.setFailureStatus()
         })
     }
+    
+    
     
 }

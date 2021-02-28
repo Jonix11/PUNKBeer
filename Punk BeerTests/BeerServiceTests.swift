@@ -28,7 +28,7 @@ class BeerServiceTests: XCTestCase {
     }
     
     func testGetBeerListByFoodWithBeerService() {
-        beerService.getSearchedBeers(byFood: "a food", success: { (beers) in
+        beerService.getSearchedBeers(withQueryParams: ["food": "curry"], success: { (beers) in
             XCTAssertNotNil(beers)
             XCTAssertGreaterThan(beers.count, 0)
             XCTAssertNotNil(beers.first?.beerId)

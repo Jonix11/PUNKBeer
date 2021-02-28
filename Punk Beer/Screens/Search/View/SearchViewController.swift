@@ -159,7 +159,6 @@ extension SearchViewController: SearchViewProtocol {
 extension SearchViewController: FiltersViewControllerDelegate {
     func filtersViewController(_ filtersViewController: FiltersViewController, didApplyFilters filters: [String : String]) {
         self.filters = filters
-        print(filters)
         let othersFilters = filters.keys.filter {
             $0 != "food"
         }
