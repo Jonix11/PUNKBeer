@@ -63,26 +63,38 @@ extension IngredientsViewController: UITableViewDataSource {
         case 0:
             let cellId = "MaltCell"
             let ingredient = ingredients.malt[indexPath.row]
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
-            cell.textLabel?.text = ingredient.name
-            cell.detailTextLabel?.text = ingredient.amount?.description
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+            if cell == nil {
+                cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+            }
+            cell?.textLabel?.text = ingredient.name
+            cell?.detailTextLabel?.text = ingredient.amount?.description
+            cell?.selectionStyle = .none
             
-            return cell
+            return cell!
         case 1:
             let cellId = "HopsCell"
             let ingredient = ingredients.hops[indexPath.row]
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
-            cell.textLabel?.text = ingredient.name
-            cell.detailTextLabel?.text = ingredient.amount?.description
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+            if cell == nil {
+                cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+            }
+            cell?.textLabel?.text = ingredient.name
+            cell?.detailTextLabel?.text = ingredient.amount?.description
+            cell?.selectionStyle = .none
             
-            return cell
+            return cell!
         case 2:
             let cellId = "YeastCell"
             let ingredient = ingredients.yeast
-            let cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
-            cell.textLabel?.text = ingredient
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+            if cell == nil {
+                cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
+            }
+            cell?.textLabel?.text = ingredient
+            cell?.selectionStyle = .none
             
-            return cell
+            return cell!
         default:
             return UITableViewCell()
         }
