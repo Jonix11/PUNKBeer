@@ -71,12 +71,18 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Beers"
+        presenter.retrieveSavedFilters()
         setupUI()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
         state = .loading
-        presenter.getInitialBeerList()
+        if filters.count > 0 {
+            setupUIWithFilters()
+            presenter.getSearchedBeerList(withQueryParams: filters)
+        } else {
+            presenter.getInitialBeerList()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -86,6 +92,24 @@ class SearchViewController: UIViewController {
     func setupUI() {
         let filterButton = UIBarButtonItem(title: "Filters", style: .plain, target: self, action: #selector(filterButtonTapped))
         navigationItem.rightBarButtonItem = filterButton
+    }
+    
+    func setupUIWithFilters() {
+        
+        if let food = filters[PunkAPIConstants.FOOD_FILTER] {
+            if filters.count > 1 {
+                navigationItem.rightBarButtonItem?.title = "Filters(\(filters.count - 1))"
+            } else {
+                navigationItem.rightBarButtonItem?.title = "Filters"
+            }
+            searchBar.text = food
+        } else {
+            if filters.count > 0 {
+                navigationItem.rightBarButtonItem?.title = "Filters(\(filters.count))"
+            } else {
+                navigationItem.rightBarButtonItem?.title = "Filters"
+            }
+        }
     }
     
     @objc func filterButtonTapped() {
@@ -109,6 +133,7 @@ extension SearchViewController: UISearchBarDelegate {
             filters.updateValue(searchText, forKey: PunkAPIConstants.FOOD_FILTER)
             presenter.getSearchedBeerList(withQueryParams: filters)
         }
+        presenter.saveFilters(filters)
     }
 }
 
@@ -154,11 +179,16 @@ extension SearchViewController: SearchViewProtocol {
     func setFailureStatus() {
         state = .failure
     }
+    
+    func setRetrievedFilters(withFilters filters: [String : String]) {
+        self.filters = filters
+    }
 }
 
 extension SearchViewController: FiltersViewControllerDelegate {
     func filtersViewController(_ filtersViewController: FiltersViewController, didApplyFilters filters: [String : String]) {
         self.filters = filters
+        presenter.saveFilters(self.filters)
         let othersFilters = filters.keys.filter {
             $0 != "food"
         }

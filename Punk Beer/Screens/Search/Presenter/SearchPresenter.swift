@@ -46,6 +46,17 @@ extension SearchPresenter: SearchPresenterProtocol {
         })
     }
     
+    func saveFilters(_ filters: [String: String]) {
+        print(filters)
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue(filters, forKey: PunkAPIConstants.SAVED_FILTERS)
+    }
     
+    func retrieveSavedFilters() {
+        let userDefaults = UserDefaults.standard
+        let retrievedFilters = userDefaults.dictionary(forKey: PunkAPIConstants.SAVED_FILTERS) as! [String: String]
+        print(retrievedFilters)
+        ui?.setRetrievedFilters(withFilters: retrievedFilters)
+    }
     
 }
