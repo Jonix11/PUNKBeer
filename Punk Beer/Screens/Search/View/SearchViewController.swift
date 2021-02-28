@@ -18,8 +18,7 @@ class SearchViewController: UIViewController {
     
     //MARK: - Properties
     var model: [Beer] = []
-    var allFilters: [String: String] = [:]
-    var filtersForFiltersView: [String: String] = [:]
+    var filters: [String: String] = [:]
     var state: ViewState = .success {
         willSet {
             guard newValue != state else { return }
@@ -80,13 +79,17 @@ class SearchViewController: UIViewController {
         presenter.getInitialBeerList()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func setupUI() {
         let filterButton = UIBarButtonItem(title: "Filters", style: .plain, target: self, action: #selector(filterButtonTapped))
         navigationItem.rightBarButtonItem = filterButton
     }
     
     @objc func filterButtonTapped() {
-        let filtersView = FiltersViewController(filters: filtersForFiltersView)
+        let filtersView = FiltersViewController(filters: filters)
         filtersView.delegate = self
         present(filtersView, animated: true, completion: nil)
     }
@@ -96,15 +99,15 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         state = .loading
         if searchText.count == 0 {
-            allFilters.removeValue(forKey: PunkAPIConstants.FOOD_FILTER)
-            if allFilters.count == 0 {
+            filters.removeValue(forKey: PunkAPIConstants.FOOD_FILTER)
+            if filters.count == 0 {
                 presenter.getInitialBeerList()
             } else {
-                presenter.getSearchedBeerList(withQueryParams: allFilters)
+                presenter.getSearchedBeerList(withQueryParams: filters)
             }
         } else {
-            allFilters.updateValue(searchText, forKey: PunkAPIConstants.FOOD_FILTER)
-            presenter.getSearchedBeerList(withQueryParams: allFilters)
+            filters.updateValue(searchText, forKey: PunkAPIConstants.FOOD_FILTER)
+            presenter.getSearchedBeerList(withQueryParams: filters)
         }
     }
 }
@@ -155,18 +158,21 @@ extension SearchViewController: SearchViewProtocol {
 
 extension SearchViewController: FiltersViewControllerDelegate {
     func filtersViewController(_ filtersViewController: FiltersViewController, didApplyFilters filters: [String : String]) {
-        filtersForFiltersView = filters
-        if filtersForFiltersView.count == 0 {
-            allFilters.removeValue(forKey: PunkAPIConstants.LESS_FILTER)
-            allFilters.removeValue(forKey: PunkAPIConstants.GREATER_FILTER)
+        self.filters = filters
+        print(filters)
+        let othersFilters = filters.keys.filter {
+            $0 != "food"
+        }
+        if othersFilters.count == 0 {
             navigationItem.rightBarButtonItem?.title = "Filters"
         } else {
-            navigationItem.rightBarButtonItem?.title = "Filters(\(filtersForFiltersView.count))"
-            for item in filtersForFiltersView {
-                allFilters.updateValue(item.value, forKey: item.key)
-            }
+            navigationItem.rightBarButtonItem?.title = "Filters(\(othersFilters.count))"
         }
         state = .loading
-        presenter.getSearchedBeerList(withQueryParams: allFilters)
+        if self.filters.count == 0 {
+            presenter.getInitialBeerList()
+        } else {
+            presenter.getSearchedBeerList(withQueryParams: self.filters)
+        }
     }
 }

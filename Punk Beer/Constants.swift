@@ -43,4 +43,6 @@ struct PunkAPIConstants {
     static let FOOD_FILTER = "food"
     static let GREATER_FILTER = "abv_gt"
     static let LESS_FILTER = "abv_lt"
+    static let BREWED_AFTER_FILTER = "brewed_after"
+    static let BREWED_BEFORE_FILTER = "brewed_before"
 }

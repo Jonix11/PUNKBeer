@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController" customModule="Punk_Beer" customModuleProvider="target">
             <connections>
                 <outlet property="abvPickerView" destination="4rc-f0-aov" id="RzB-9P-NPd"/>
+                <outlet property="brewedAfterPickerView" destination="DWC-9v-cfy" id="icy-tg-ggA"/>
+                <outlet property="brewedBeforePickerView" destination="Vv4-AB-bCD" id="tFs-Py-wTL"/>
                 <outlet property="toolBar" destination="FVN-wQ-6HT" id="It6-YM-jh0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,9 +45,30 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rc-f0-aov">
-                    <rect key="frame" x="0.0" y="182" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="182" width="414" height="216"/>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewed after:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D28-fC-h8G">
+                    <rect key="frame" x="20" y="408" width="121" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewed before:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlA-7J-h1v">
+                    <rect key="frame" x="20" y="557" width="137" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv4-AB-bCD">
+                    <rect key="frame" x="0.0" y="586" width="414" height="100"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="BW8-ro-lPQ"/>
+                        <constraint firstAttribute="height" constant="100" id="6ID-rN-q3V"/>
+                    </constraints>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWC-9v-cfy">
+                    <rect key="frame" x="0.0" y="437" width="414" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="YFE-vR-Zuh"/>
                     </constraints>
                 </pickerView>
             </subviews>
@@ -55,13 +78,23 @@
                 <constraint firstItem="Xsr-F8-m8q" firstAttribute="top" secondItem="FVN-wQ-6HT" secondAttribute="bottom" constant="15" id="13y-Oz-CxI"/>
                 <constraint firstItem="4rc-f0-aov" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8I5-vX-TwM"/>
                 <constraint firstItem="lHu-8P-lZB" firstAttribute="top" secondItem="Xsr-F8-m8q" secondAttribute="bottom" constant="20" id="8mU-5p-jOF"/>
+                <constraint firstItem="D28-fC-h8G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9jI-cf-jTN"/>
+                <constraint firstItem="DWC-9v-cfy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BXF-lG-zF2"/>
                 <constraint firstItem="FVN-wQ-6HT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Gpx-2k-QZh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xsr-F8-m8q" secondAttribute="trailing" constant="20" id="Ho5-D1-MBd"/>
+                <constraint firstItem="SlA-7J-h1v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KQh-a0-JU7"/>
+                <constraint firstItem="DWC-9v-cfy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SBW-MT-Eog"/>
                 <constraint firstItem="lHu-8P-lZB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SOY-Rr-fQn"/>
                 <constraint firstItem="FVN-wQ-6HT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TAK-eg-hjI"/>
+                <constraint firstItem="DWC-9v-cfy" firstAttribute="top" secondItem="D28-fC-h8G" secondAttribute="bottom" constant="5" id="cHJ-Rg-lLE"/>
                 <constraint firstItem="4rc-f0-aov" firstAttribute="top" secondItem="lHu-8P-lZB" secondAttribute="bottom" constant="5" id="hQD-QI-10U"/>
+                <constraint firstItem="Vv4-AB-bCD" firstAttribute="top" secondItem="SlA-7J-h1v" secondAttribute="bottom" constant="5" id="lAE-oW-OuS"/>
+                <constraint firstItem="Vv4-AB-bCD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mdH-MQ-jpY"/>
+                <constraint firstItem="D28-fC-h8G" firstAttribute="top" secondItem="4rc-f0-aov" secondAttribute="bottom" constant="10" id="pxT-hs-dv3"/>
+                <constraint firstItem="SlA-7J-h1v" firstAttribute="top" secondItem="DWC-9v-cfy" secondAttribute="bottom" constant="20" id="qfx-uI-plU"/>
                 <constraint firstItem="4rc-f0-aov" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ufK-Vv-KCi"/>
                 <constraint firstItem="FVN-wQ-6HT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wgd-Zo-Sb4"/>
+                <constraint firstItem="Vv4-AB-bCD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="y6h-WH-hhE"/>
             </constraints>
             <point key="canvasLocation" x="-365.21739130434787" y="122.54464285714285"/>
         </view>
