@@ -49,7 +49,7 @@ extension SearchPresenter: SearchPresenterProtocol {
     func saveFilters(_ filters: [String: String]) {
         print(filters)
         let userDefaults = UserDefaults.standard
-        userDefaults.setValue(filters, forKey: PunkAPIConstants.SAVED_FILTERS)
+        userDefaults.set(filters, forKey: PunkAPIConstants.SAVED_FILTERS)
     }
     
     func retrieveSavedFilters() {

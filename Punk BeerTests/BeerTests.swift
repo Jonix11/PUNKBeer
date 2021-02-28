@@ -87,5 +87,14 @@ class BeerTests: XCTestCase {
     func testAmountHasDescription() {
         XCTAssertNotNil(amount.description)
     }
+    
+    func testFiltersSavedAndRetrieveCorrectly() {
+        let userDefaults = UserDefaults.init(suiteName: "tests")
+        let filtersToSave = [PunkAPIConstants.FOOD_FILTER: "Cake", PunkAPIConstants.BREWED_AFTER_FILTER: "06-2013"]
+        let filterKey = "FilterKey"
+        userDefaults?.set(filtersToSave, forKey: filterKey)
+        let retrievedFiltes = userDefaults?.dictionary(forKey: filterKey) as! [String: String]
+        XCTAssertEqual(filtersToSave, retrievedFiltes)
+    }
 
 }
