@@ -18,7 +18,8 @@ class SearchViewController: UIViewController {
     
     //MARK: - Properties
     var model: [Beer] = []
-    var filters: [String: String] = [:]
+    var allFilters: [String: String] = [:]
+    var filtersForFiltersView: [String: String] = [:]
     var state: ViewState = .success {
         willSet {
             guard newValue != state else { return }
@@ -85,7 +86,8 @@ class SearchViewController: UIViewController {
     }
     
     @objc func filterButtonTapped() {
-        let filtersView = FiltersViewController()
+        let filtersView = FiltersViewController(filters: filtersForFiltersView)
+        filtersView.delegate = self
         present(filtersView, animated: true, completion: nil)
     }
 }
@@ -94,10 +96,15 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         state = .loading
         if searchText.count == 0 {
-            presenter.getInitialBeerList()
+            allFilters.removeValue(forKey: PunkAPIConstants.FOOD_FILTER)
+            if allFilters.count == 0 {
+                presenter.getInitialBeerList()
+            } else {
+                presenter.getSearchedBeerList(withQueryParams: allFilters)
+            }
         } else {
-            filters.updateValue(searchText, forKey: "food")
-            presenter.getSearchedBeerList(withQueryParams: filters)
+            allFilters.updateValue(searchText, forKey: PunkAPIConstants.FOOD_FILTER)
+            presenter.getSearchedBeerList(withQueryParams: allFilters)
         }
     }
 }
@@ -143,5 +150,23 @@ extension SearchViewController: SearchViewProtocol {
     
     func setFailureStatus() {
         state = .failure
+    }
+}
+
+extension SearchViewController: FiltersViewControllerDelegate {
+    func filtersViewController(_ filtersViewController: FiltersViewController, didApplyFilters filters: [String : String]) {
+        filtersForFiltersView = filters
+        if filtersForFiltersView.count == 0 {
+            allFilters.removeValue(forKey: PunkAPIConstants.LESS_FILTER)
+            allFilters.removeValue(forKey: PunkAPIConstants.GREATER_FILTER)
+            navigationItem.rightBarButtonItem?.title = "Filters"
+        } else {
+            navigationItem.rightBarButtonItem?.title = "Filters(\(filtersForFiltersView.count))"
+            for item in filtersForFiltersView {
+                allFilters.updateValue(item.value, forKey: item.key)
+            }
+        }
+        state = .loading
+        presenter.getSearchedBeerList(withQueryParams: allFilters)
     }
 }

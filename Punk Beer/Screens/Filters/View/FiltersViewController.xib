@@ -10,8 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController" customModule="Punk_Beer" customModuleProvider="target">
             <connections>
-                <outlet property="abvGreaterTextField" destination="cVl-jQ-Sr3" id="Bc8-Q7-pvi"/>
-                <outlet property="abvLessTextField" destination="jF7-2I-HL1" id="c7M-8e-2tx"/>
+                <outlet property="abvPickerView" destination="4rc-f0-aov" id="RzB-9P-NPd"/>
                 <outlet property="toolBar" destination="FVN-wQ-6HT" id="It6-YM-jh0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,51 +42,28 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVl-jQ-Sr3">
-                    <rect key="frame" x="166.5" y="197" width="227.5" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greater than:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPO-TS-Adp">
-                    <rect key="frame" x="32" y="203.5" width="104.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jF7-2I-HL1">
-                    <rect key="frame" x="166.5" y="271" width="227.5" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Less than:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-d1-oEf">
-                    <rect key="frame" x="32" y="277.5" width="81" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rc-f0-aov">
+                    <rect key="frame" x="0.0" y="182" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="BW8-ro-lPQ"/>
+                    </constraints>
+                </pickerView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Xsr-F8-m8q" firstAttribute="top" secondItem="FVN-wQ-6HT" secondAttribute="bottom" constant="15" id="13y-Oz-CxI"/>
-                <constraint firstItem="cVl-jQ-Sr3" firstAttribute="top" secondItem="lHu-8P-lZB" secondAttribute="bottom" constant="20" id="64O-T6-c0U"/>
+                <constraint firstItem="4rc-f0-aov" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8I5-vX-TwM"/>
                 <constraint firstItem="lHu-8P-lZB" firstAttribute="top" secondItem="Xsr-F8-m8q" secondAttribute="bottom" constant="20" id="8mU-5p-jOF"/>
-                <constraint firstItem="1Tp-d1-oEf" firstAttribute="centerY" secondItem="jF7-2I-HL1" secondAttribute="centerY" id="8pb-GX-km7"/>
-                <constraint firstItem="1Tp-d1-oEf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="EDd-G9-uJ7"/>
-                <constraint firstItem="UPO-TS-Adp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Fl8-7e-O2p"/>
                 <constraint firstItem="FVN-wQ-6HT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Gpx-2k-QZh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xsr-F8-m8q" secondAttribute="trailing" constant="20" id="Ho5-D1-MBd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cVl-jQ-Sr3" secondAttribute="trailing" constant="20" id="Rqh-XC-zMu"/>
                 <constraint firstItem="lHu-8P-lZB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SOY-Rr-fQn"/>
-                <constraint firstItem="jF7-2I-HL1" firstAttribute="top" secondItem="cVl-jQ-Sr3" secondAttribute="bottom" constant="40" id="SPP-XL-BxZ"/>
                 <constraint firstItem="FVN-wQ-6HT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TAK-eg-hjI"/>
-                <constraint firstItem="jF7-2I-HL1" firstAttribute="width" secondItem="cVl-jQ-Sr3" secondAttribute="width" id="j4d-1s-YJK"/>
-                <constraint firstItem="UPO-TS-Adp" firstAttribute="centerY" secondItem="cVl-jQ-Sr3" secondAttribute="centerY" id="v0F-eL-lbk"/>
-                <constraint firstItem="cVl-jQ-Sr3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="UPO-TS-Adp" secondAttribute="trailing" constant="30" id="vaE-k1-PNd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jF7-2I-HL1" secondAttribute="trailing" constant="20" id="we1-E4-Hcj"/>
+                <constraint firstItem="4rc-f0-aov" firstAttribute="top" secondItem="lHu-8P-lZB" secondAttribute="bottom" constant="5" id="hQD-QI-10U"/>
+                <constraint firstItem="4rc-f0-aov" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ufK-Vv-KCi"/>
                 <constraint firstItem="FVN-wQ-6HT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wgd-Zo-Sb4"/>
             </constraints>
-            <point key="canvasLocation" x="-364" y="123"/>
+            <point key="canvasLocation" x="-365.21739130434787" y="122.54464285714285"/>
         </view>
     </objects>
     <resources>

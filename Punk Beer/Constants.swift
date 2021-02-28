@@ -39,4 +39,8 @@ struct PunkAPIConstants {
         
         return components.url!
     }
+    
+    static let FOOD_FILTER = "food"
+    static let GREATER_FILTER = "abv_gt"
+    static let LESS_FILTER = "abv_lt"
 }

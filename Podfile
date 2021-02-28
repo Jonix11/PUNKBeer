@@ -7,7 +7,6 @@ target 'Punk Beer' do
 
   # Pods for Punk Beer
   pod 'SDWebImage'
-  pod 'IQKeyboardManagerSwift'
 
   target 'Punk BeerTests' do
     inherit! :search_paths
