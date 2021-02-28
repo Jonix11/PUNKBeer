@@ -46,4 +46,17 @@ extension SearchPresenter: SearchPresenterProtocol {
         })
     }
     
+    
+    func getSearchedBeerList(withQueryParams queryParams: [String: String]) {
+        service.getSearchedBeers(withQueryParams: queryParams, success: { [weak self] (beers) in
+            if beers.count == 0 {
+                self?.ui?.setEmptyStatus()
+            } else {
+                self?.ui?.setBeerList(with: beers)
+            }
+        }, failure: {[weak self] (error) in
+            self?.ui?.setFailureStatus()
+        })
+    }
+    
 }

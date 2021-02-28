@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     
     //MARK: - Properties
     var model: [Beer] = []
+    var filters: [String: String] = [:]
     var state: ViewState = .success {
         willSet {
             guard newValue != state else { return }
@@ -70,11 +71,22 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Beers"
+        setupUI()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
         state = .loading
         presenter.getInitialBeerList()
+    }
+    
+    func setupUI() {
+        let filterButton = UIBarButtonItem(title: "Filters", style: .plain, target: self, action: #selector(filterButtonTapped))
+        navigationItem.rightBarButtonItem = filterButton
+    }
+    
+    @objc func filterButtonTapped() {
+        let filtersView = FiltersViewController()
+        present(filtersView, animated: true, completion: nil)
     }
 }
 
@@ -84,7 +96,8 @@ extension SearchViewController: UISearchBarDelegate {
         if searchText.count == 0 {
             presenter.getInitialBeerList()
         } else {
-            presenter.getSearchedBeerList(withPairingFood: searchText)
+            filters.updateValue(searchText, forKey: "food")
+            presenter.getSearchedBeerList(withQueryParams: filters)
         }
     }
 }
@@ -106,6 +119,7 @@ extension SearchViewController: UITableViewDataSource {
         let beer = model[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchViewCell.reusableId, for: indexPath) as! SearchViewCell
         cell.beer = beer
+        cell.selectionStyle = .none
         
         return cell
     }

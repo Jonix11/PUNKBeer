@@ -26,4 +26,17 @@ struct PunkAPIConstants {
         
         return components.url!
     }
+    
+    static func getBeersURL(withQueryParams queryParams: [String: String]) -> URL {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.punkapi.com"
+        components.path = "/v2/beers"
+        components.queryItems = []
+        queryParams.forEach {
+            components.queryItems?.append(URLQueryItem(name: $0.key, value: $0.value))
+        }
+        
+        return components.url!
+    }
 }

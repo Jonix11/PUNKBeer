@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController" customModule="Punk_Beer" customModuleProvider="target">
+            <connections>
+                <outlet property="abvGreaterTextField" destination="cVl-jQ-Sr3" id="Bc8-Q7-pvi"/>
+                <outlet property="abvLessTextField" destination="jF7-2I-HL1" id="c7M-8e-2tx"/>
+                <outlet property="toolBar" destination="FVN-wQ-6HT" id="It6-YM-jh0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVN-wQ-6HT">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ZbD-Sj-nCH"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Item" id="l2A-4k-fcR"/>
+                    </items>
+                </toolbar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsr-F8-m8q">
+                    <rect key="frame" x="296" y="103" width="98" height="30"/>
+                    <state key="normal" title="Remove filters"/>
+                    <connections>
+                        <action selector="removeFiltersButtonTapped:" destination="-1" eventType="touchUpInside" id="IeU-7D-hA4"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol by volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHu-8P-lZB">
+                    <rect key="frame" x="20" y="153" width="170" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVl-jQ-Sr3">
+                    <rect key="frame" x="166.5" y="197" width="227.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greater than:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPO-TS-Adp">
+                    <rect key="frame" x="32" y="203.5" width="104.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jF7-2I-HL1">
+                    <rect key="frame" x="166.5" y="271" width="227.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Less than:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-d1-oEf">
+                    <rect key="frame" x="32" y="277.5" width="81" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xsr-F8-m8q" firstAttribute="top" secondItem="FVN-wQ-6HT" secondAttribute="bottom" constant="15" id="13y-Oz-CxI"/>
+                <constraint firstItem="cVl-jQ-Sr3" firstAttribute="top" secondItem="lHu-8P-lZB" secondAttribute="bottom" constant="20" id="64O-T6-c0U"/>
+                <constraint firstItem="lHu-8P-lZB" firstAttribute="top" secondItem="Xsr-F8-m8q" secondAttribute="bottom" constant="20" id="8mU-5p-jOF"/>
+                <constraint firstItem="1Tp-d1-oEf" firstAttribute="centerY" secondItem="jF7-2I-HL1" secondAttribute="centerY" id="8pb-GX-km7"/>
+                <constraint firstItem="1Tp-d1-oEf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="EDd-G9-uJ7"/>
+                <constraint firstItem="UPO-TS-Adp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Fl8-7e-O2p"/>
+                <constraint firstItem="FVN-wQ-6HT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Gpx-2k-QZh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xsr-F8-m8q" secondAttribute="trailing" constant="20" id="Ho5-D1-MBd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cVl-jQ-Sr3" secondAttribute="trailing" constant="20" id="Rqh-XC-zMu"/>
+                <constraint firstItem="lHu-8P-lZB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SOY-Rr-fQn"/>
+                <constraint firstItem="jF7-2I-HL1" firstAttribute="top" secondItem="cVl-jQ-Sr3" secondAttribute="bottom" constant="40" id="SPP-XL-BxZ"/>
+                <constraint firstItem="FVN-wQ-6HT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TAK-eg-hjI"/>
+                <constraint firstItem="jF7-2I-HL1" firstAttribute="width" secondItem="cVl-jQ-Sr3" secondAttribute="width" id="j4d-1s-YJK"/>
+                <constraint firstItem="UPO-TS-Adp" firstAttribute="centerY" secondItem="cVl-jQ-Sr3" secondAttribute="centerY" id="v0F-eL-lbk"/>
+                <constraint firstItem="cVl-jQ-Sr3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="UPO-TS-Adp" secondAttribute="trailing" constant="30" id="vaE-k1-PNd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jF7-2I-HL1" secondAttribute="trailing" constant="20" id="we1-E4-Hcj"/>
+                <constraint firstItem="FVN-wQ-6HT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wgd-Zo-Sb4"/>
+            </constraints>
+            <point key="canvasLocation" x="-364" y="123"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
